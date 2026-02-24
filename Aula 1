@@ -1,0 +1,94 @@
+// See https://aka.ms/new-console-template for more information
+using System.Transactions;
+
+Console.WriteLine("""
+    Hello, World!
+    Oi oi
+    bla bla
+    """);
+
+#region tipos primitivos / variáveis
+
+short idade = 18; //short é valor usado para numeros pequenos, forma de economizar memória. Short é o unico que o c# não faz a conversão automatica do var.
+var numeroVirgula = 18.6; //Var pode ser usada p qualquer um, o c# entende e ja faz a conversão automatica. Porém o ideal é deixar explicito o tipo.
+long visualizacoesYoutube = 5_300_230_123_345_294; //Long é usado para valores enormes
+
+
+// PARA NUMEROS COM VIRGULA:: double é para um valor com virgula c o menor armazenamento de memoria
+//float é para um maior. Decimal é para valores com MUITA virgula, extremamente exatos 
+
+var charactere = 'C';
+var palavra = "palavra";
+
+#endregion
+
+#region condicionais 
+
+//Tradicional
+
+if (idade >= 18)
+    Console.WriteLine("Maior de idade");
+else
+    Console.WriteLine("Menor de idade");
+
+//Outra forma
+
+Console.WriteLine(idade >= 18 
+    ? "Pessoa é maior de idade"
+    : "Pessoa é menor de idade");
+
+Console.WriteLine(idade > 18
+    ? "Pessoa é maior de idade"
+    : idade == 18 ? "Idade igual a 18"
+    : "Pessoa é menor de idade");
+
+#endregion
+
+#region laços de repetição
+
+//Tradicional
+
+var i = 0;
+while(i < 7)
+{
+    Console.WriteLine(i);
+    i++;
+}
+
+for (i = 0; i < 7; i++) 
+    Console.WriteLine(i);
+
+//Outra forma
+
+foreach(var numero in Enumerable.Range(0,7))
+    Console.WriteLine(numero);
+
+#endregion
+
+#region Arrays
+
+//Tradicional
+
+int[] numeros = { 1, 2, 3, 4, 5, 6, 7 };
+// OUU var[] numeros = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+
+var primeirosDigito = numeros[0..3]; //Mostr os numeros de 1 a 4
+var ultimooDigito = numeros[^1]; //Mostra o ultimo valor do array
+
+Console.WriteLine($"O ultimo dígito é: {ultimooDigito}");
+Console.WriteLine($"A lista tem {numeros.Length} dígitos");
+
+#endregion
+
+#region Listas
+
+var listaDeNumeros = new List<int>();
+
+#endregion
+
+#region Dicionario
+
+var dicionario = new Dictionary<string,
+    List<string>>();
+
+#endregion
